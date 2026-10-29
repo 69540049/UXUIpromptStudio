@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102a43">
+<title>UX/UI Prompt Studio — Professional</title>
+<style>
+:root{--navy:#102a43;--blue:#2563eb;--cyan:#38bdf8;--ink:#172b4d;--muted:#64748b;--line:#e2e8f0;--bg:#f3f6fb;--panel:#fff;--soft:#eff6ff;--radius:18px;--shadow:0 12px 35px rgba(15,35,65,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Noto Sans Thai","Leelawadee UI",system-ui,sans-serif;font-size:14px}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.topbar{background:linear-gradient(120deg,#102a43,#164e83 65%,#2563eb);color:#fff;padding:23px max(22px,calc((100vw - 1450px)/2));display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;gap:13px;align-items:center}.logo{width:45px;height:45px;border-radius:14px;background:rgba(255,255,255,.15);display:grid;place-items:center;font-size:23px;border:1px solid rgba(255,255,255,.2)}h1{font-size:21px;margin:0 0 3px;letter-spacing:.2px}.tagline{font-size:12px;color:#dbeafe}.top-actions{display:flex;gap:9px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 13px;border-radius:10px;font-weight:650;transition:.18s}.btn:hover{transform:translateY(-1px);box-shadow:0 5px 14px #0f172a14}.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}.btn.ghost{background:rgba(255,255,255,.12);border-color:#ffffff44;color:#fff}.btn.danger{color:#b91c1c}.shell{max-width:1450px;margin:24px auto;padding:0 22px;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(370px,.88fr);gap:22px;align-items:start}.main,.side{display:grid;gap:17px}.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.card-head{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.card-head h2{font-size:15px;margin:0}.card-head p{margin:4px 0 0;color:var(--muted);font-size:12px}.card-body{padding:19px 20px}.step{display:flex;align-items:center;gap:10px}.stepno{width:27px;height:27px;border-radius:9px;background:var(--soft);color:var(--blue);display:grid;place-items:center;font-weight:800;font-size:12px}.field{margin-bottom:16px}.field:last-child{margin-bottom:0}label,.field-label{display:block;font-weight:700;margin-bottom:8px;font-size:13px}.hint{font-size:11px;color:var(--muted);font-weight:400;margin-left:5px}.input,select,textarea{width:100%;border:1px solid #d8e1ed;border-radius:10px;padding:10px 11px;background:#fff;color:var(--ink);outline:none}.input:focus,select:focus,textarea:focus{border-color:#60a5fa;box-shadow:0 0 0 3px #dbeafe}.options{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1px solid #dbe3ed;background:#fff;color:#475569;border-radius:10px;padding:8px 11px;font-size:12px;transition:.15s}.chip:hover{border-color:#93c5fd;color:#1d4ed8}.chip.active{background:#eaf2ff;border-color:#5b9af5;color:#1747a6;font-weight:750;box-shadow:inset 0 0 0 1px #bfdbfe}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.color-row{display:flex;align-items:center;gap:9px}.color-row input[type=color]{width:40px;height:38px;border:1px solid var(--line);border-radius:9px;padding:3px;background:white}.color-row input[type=text]{flex:1;min-width:0}.checkgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.check{display:flex;gap:8px;align-items:flex-start;border:1px solid var(--line);padding:9px 10px;border-radius:10px;font-size:12px;color:#334155}.check input{accent-color:var(--blue);margin-top:2px}.check:has(input:checked){background:#f1f6ff;border-color:#93c5fd}.section-note{color:var(--muted);font-size:12px;line-height:1.55;margin:-3px 0 14px}.divider{height:1px;background:var(--line);margin:16px 0}.preview-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.status{font-size:11px;color:#0f766e;background:#ccfbf1;border-radius:20px;padding:5px 9px;font-weight:700}.prompt{white-space:pre-wrap;overflow-wrap:anywhere;background:#0b1628;color:#dbeafe;border-radius:13px;padding:17px;min-height:360px;max-height:650px;overflow:auto;font:12px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace}.preview-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.tabs{display:flex;gap:6px;background:#f1f5f9;padding:5px;border-radius:11px}.tab{flex:1;border:0;background:transparent;border-radius:8px;padding:8px 6px;color:#64748b;font-weight:700;font-size:12px}.tab.active{background:#fff;color:#1d4ed8;box-shadow:0 1px 4px #0f172a12}.mini{font-size:11px;color:var(--muted)}.saved-list{display:grid;gap:8px}.saved-item{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid var(--line);padding:9px 10px;border-radius:10px}.saved-item strong{font-size:12px}.saved-item small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.saved-item button{border:0;background:transparent;color:#2563eb;font-size:11px;font-weight:700}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#102a43;color:#fff;padding:11px 16px;border-radius:12px;box-shadow:var(--shadow);transition:.25s;z-index:9}.toast.show{opacity:1;transform:translate(-50%,0)}.footer{text-align:center;color:#94a3b8;font-size:11px;padding:0 15px 24px}.badge{font-size:10px;background:#dbeafe;color:#1d4ed8;padding:4px 7px;border-radius:20px;font-weight:800}.range-line{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}input[type=range]{width:100%;accent-color:var(--blue)}@media(max-width:1000px){.shell{grid-template-columns:1fr}.side{grid-row:1}.prompt{min-height:280px}}@media(max-width:600px){.topbar{padding:17px;align-items:flex-start;flex-direction:column}.shell{padding:0 12px;margin:13px auto;gap:13px}.card-head,.card-body{padding:15px}.grid2,.grid3{grid-template-columns:1fr}.checkgrid{grid-template-columns:1fr}.top-actions{width:100%}.top-actions .btn{flex:1}.prompt{font-size:11px}.preview-actions .btn{flex:1}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+ <div class="brand"><div class="logo">✳</div><div><h1>UX/UI Prompt Studio</h1><div class="tagline">Professional Design Command Center · Select → Compose → Create</div></div></div>
+ <div class="top-actions"><button class="btn ghost" id="savePresetTop">＋ Save preset</button><button class="btn ghost" id="resetBtn">↺ Reset</button></div>
+</header>
+<div class="shell">
+<main class="main">
+ <section class="card">
+  <div class="card-head"><div class="step"><span class="stepno">01</span><div><h2>Project Foundation</h2><p>กำหนดประเภทงานและบริบทของผลิตภัณฑ์</p></div></div><span class="badge">PROJECT</span></div>
+  <div class="card-body">
+   <div class="field"><label>Project / Product name</label><input class="input" id="projectName" placeholder="เช่น My KPI Compass, HR Learning Dashboard"></div>
+   <div class="field"><label>Design type</label><div class="options" data-key="type"><button class="chip active">Web App</button><button class="chip">Dashboard</button><button class="chip">Landing Page</button><button class="chip">Admin Panel</button><button class="chip">Mobile App</button><button class="chip">Portal / Intranet</button><button class="chip">E-commerce</button></div></div>
+   <div class="field"><label>Target audience</label><input class="input" id="audience" placeholder="เช่น HR, Managers, Employees, Students"></div>
+   <div class="field"><label>Primary goal</label><textarea id="goal" rows="2" placeholder="ระบบนี้ช่วยให้ผู้ใช้ทำอะไรได้ดีขึ้น?"></textarea></div>
+  </div>
+ </section>
+ <section class="card">
+  <div class="card-head"><div class="step"><span class="stepno">02</span><div><h2>Layout & Navigation</h2><p>เลือกโครงสร้างและรูปแบบการนำทาง</p></div></div></div>
+  <div class="card-body">
+   <div class="field"><label>Layout pattern</label><div class="options" data-key="layout"><button class="chip active">Bento Grid</button><button class="chip">Sidebar Dashboard</button><button class="chip">Top Navigation</button><button class="chip">Card-based</button><button class="chip">Split Screen</button><button class="chip">Full-width</button><button class="chip">Magazine / Editorial</button><button class="chip">Single-page</button></div></div>
+   <div class="field"><label>Navigation style</label><div class="options" data-key="nav"><button class="chip active">Collapsible Sidebar</button><button class="chip">Top Bar</button><button class="chip">Bottom Navigation</button><button class="chip">Floating Navigation</button><button class="chip">Tab Navigation</button><button class="chip">Minimal Navigation</button></div></div>
+   <div class="field"><label>Content density</label><div class="options" data-key="density"><button class="chip">Spacious</button><button class="chip active">Balanced</button><button class="chip">Information-dense</button></div></div>
+  </div>
+ </section>
+ <section class="card">
+  <div class="card-head"><div class="step"><span class="stepno">03</span><div><h2>Visual Identity & Design System</h2><p>กำหนดบุคลิก สี ฟอนต์ และรายละเอียดภาพรวม</p></div></div></div>
+  <div class="card-body">
+   <div class="field"><label>Visual style</label><div class="options" data-key="style"><button class="chip active">Modern Minimal</button><button class="chip">Corporate Clean</button><button class="chip">Glassmorphism</button><button class="chip">Premium Dark</button><button class="chip">Soft UI</button><button class="chip">Material Design</button><button class="chip">Flat Design</button><button class="chip">Neumorphism</button><button class="chip">Playful / Colorful</button><button class="chip">3D / Isometric</button></div></div>
+   <div class="grid2">
+    <div class="field"><label>Primary color</label><div class="color-row"><input type="color" id="primaryColor" value="#2563eb"><input class="input" id="primaryHex" value="#2563eb"></div></div>
+    <div class="field"><label>Accent color</label><div class="color-row"><input type="color" id="accentColor" value="#38bdf8"><input class="input" id="accentHex" value="#38bdf8"></div></div>
+    <div class="field"><label>Background color</label><div class="color-row"><input type="color" id="bgColor" value="#f3f6fb"><input class="input" id="bgHex" value="#f3f6fb"></div></div>
+    <div class="field"><label>Text color</label><div class="color-row"><input type="color" id="textColor" value="#172b4d"><input class="input" id="textHex" value="#172b4d"></div></div>
+   </div>
+   <div class="grid2">
+    <div class="field"><label>Typography</label><select id="font"><option>Kanit</option><option>Inter</option><option>Prompt</option><option>Roboto</option><option>Noto Sans Thai</option><option>IBM Plex Sans Thai</option><option>Plus Jakarta Sans</option><option>DM Sans</option><option>Use brand typography</option></select></div>
+    <div class="field"><label>Corner radius</label><select id="radius"><option>Sharp (4px)</option><option>Subtle (8px)</option><option selected>Rounded (14–18px)</option><option>Extra rounded (24px)</option><option>Pill / fully rounded</option></select></div>
+   </div>
+   <div class="field"><label>Surface & effects</label><div class="options" data-key="effects" data-multi="true"><button class="chip active">Subtle shadows</button><button class="chip active">Clean borders</button><button class="chip">Gradient accents</button><button class="chip">Glass surfaces</button><button class="chip">Soft elevation</button><button class="chip">High contrast</button><button class="chip">Texture / patterns</button></div></div>
+  </div>
+ </section>
+ <section class="card">
+  <div class="card-head"><div class="step"><span class="stepno">04</span><div><h2>UI Components</h2><p>เลือกองค์ประกอบที่ต้องการให้ AI สร้าง</p></div></div></div>
+  <div class="card-body">
+   <p class="section-note">เลือกได้หลายรายการ ระบบจะใส่รายละเอียด component และแนวทางการใช้งานลงใน Prompt</p>
+   <div class="checkgrid" data-checkgroup="components">
+    <label class="check"><input type="checkbox" value="KPI / Metric cards" checked>KPI / Metric cards</label><label class="check"><input type="checkbox" value="Data tables with sorting and pagination" checked>Data Table</label>
+    <label class="check"><input type="checkbox" value="Interactive charts and data visualization" checked>Interactive Charts</label><label class="check"><input type="checkbox" value="Search, filter and advanced filtering">Search & Filters</label>
+    <label class="check"><input type="checkbox" value="Forms with validation">Forms & Validation</label><label class="check"><input type="checkbox" value="Modal dialogs and confirmation dialogs">Modal Dialogs</label>
+    <label class="check"><input type="checkbox" value="Toast notifications and alerts">Notifications / Toast</label><label class="check"><input type="checkbox" value="Progress bars and stepper">Progress / Stepper</label>
+    <label class="check"><input type="checkbox" value="Tabs and accordions">Tabs / Accordion</label><label class="check"><input type="checkbox" value="User profile, avatar and account menu">Profile / Avatar</label>
+    <label class="check"><input type="checkbox" value="Calendar and scheduling components">Calendar / Schedule</label><label class="check"><input type="checkbox" value="File upload and export controls">Upload / Export</label>
+    <label class="check"><input type="checkbox" value="Empty, loading, skeleton and error states" checked>Loading / Empty / Error states</label><label class="check"><input type="checkbox" value="Activity timeline and audit log">Timeline / Activity log</label>
+   </div>
+  </div>
+ </section>
+ <section class="card">
+  <div class="card-head"><div class="step"><span class="stepno">05</span><div><h2>Interaction & Motion</h2><p>กำหนดพฤติกรรมเมื่อผู้ใช้โต้ตอบกับระบบ</p></div></div></div>
+  <div class="card-body">
+   <div class="field"><label>Interaction level</label><div class="options" data-key="interaction"><button class="chip">Static UI</button><button class="chip">Functional interactions</button><button class="chip active">Rich interactive experience</button></div></div>
+   <div class="field"><label>Interaction patterns</label><div class="checkgrid" data-checkgroup="interactions">
+    <label class="check"><input type="checkbox" value="Hover and focus states" checked>Hover / Focus states</label><label class="check"><input type="checkbox" value="Micro-interactions">Micro-interactions</label>
+    <label class="check"><input type="checkbox" value="Smooth page and component transitions" checked>Smooth transitions</label><label class="check"><input type="checkbox" value="Drag and drop">Drag & Drop</label>
+    <label class="check"><input type="checkbox" value="Real-time updates">Real-time updates</label><label class="check"><input type="checkbox" value="Interactive chart tooltips and drill-down">Chart drill-down</label>
+   </div></div>
+   <div class="field"><label>Animation intensity</label><div class="options" data-key="motion"><button class="chip active">Subtle</button><button class="chip">Moderate</button><button class="chip">Expressive</button><button class="chip">No animation</button></div></div>
+  </div>
+ </section>
+ <section class="card">
+  <div class="card-head"><div class="step"><span class="stepno">06</span><div><h2>UX Quality & Responsiveness</h2><p>กำหนดมาตรฐานประสบการณ์ใช้งานและอุปกรณ์</p></div></div></div>
+  <div class="card-body">
+   <div class="field"><label>Responsive targets</label><div class="options" data-key="responsive"><button class="chip active">Desktop + Tablet + Mobile</button><button class="chip">Desktop only</button><button class="chip">Mobile-first</button><button class="chip">Tablet + Mobile</button></div></div>
+   <div class="field"><label>UX principles</label><div class="checkgrid" data-checkgroup="ux">
+    <label class="check"><input type="checkbox" value="Clear information architecture and intuitive navigation" checked>Information architecture</label><label class="check"><input type="checkbox" value="WCAG 2.2 AA accessibility, keyboard navigation and contrast" checked>Accessibility / WCAG</label>
+    <label class="check"><input type="checkbox" value="Clear visual hierarchy and readable typography" checked>Visual hierarchy</label><label class="check"><input type="checkbox" value="Consistent design tokens and reusable components" checked>Design consistency</label>
+    <label class="check"><input type="checkbox" value="Helpful validation and actionable error messages" checked>Helpful feedback</label><label class="check"><input type="checkbox" value="Progressive disclosure and reduced cognitive load">Progressive disclosure</label>
+    <label class="check"><input type="checkbox" value="Keyboard accessibility and visible focus indicators">Keyboard navigation</label><label class="check"><input type="checkbox" value="Performance optimization and perceived loading speed">Performance</label>
+   </div></div>
+   <div class="field"><label>Additional requirements</label><textarea id="extra" rows="3" placeholder="เช่น ใช้ภาษาไทยเป็นหลัก, มีระบบ Login, เชื่อมต่อ Firebase, ใช้ข้อมูลตัวอย่าง, ต้องมี Admin / User role..."></textarea></div>
+  </div>
+ </section>
+ <section class="card">
+  <div class="card-head"><div class="step"><span class="stepno">07</span><div><h2>Build & Delivery Instructions</h2><p>ระบุเครื่องมือและสิ่งที่ต้องส่งมอบ</p></div></div></div>
+  <div class="card-body">
+   <div class="grid2">
+    <div class="field"><label>Implementation platform</label><select id="platform"><option>HTML, CSS and JavaScript</option><option>React</option><option>Next.js</option><option>Vue</option><option>Python Streamlit</option><option>Figma prototype only</option><option>Let AI recommend the best stack</option></select></div>
+    <div class="field"><label>CSS / UI framework</label><select id="framework"><option>Tailwind CSS</option><option>Bootstrap</option><option>Vanilla CSS</option><option>Material UI</option><option>Ant Design</option><option>Not specified</option></select></div>
+   </div>
+   <div class="field"><label>Expected deliverables</label><div class="checkgrid" data-checkgroup="deliverables">
+    <label class="check"><input type="checkbox" value="Complete working application, not just a visual mockup" checked>Working application</label><label class="check"><input type="checkbox" value="Reusable component architecture and design tokens" checked>Reusable components</label>
+    <label class="check"><input type="checkbox" value="Realistic sample data and populated states" checked>Sample data</label><label class="check"><input type="checkbox" value="Functional buttons, forms, filters and navigation" checked>Functional controls</label>
+    <label class="check"><input type="checkbox" value="Clear setup and deployment instructions">Setup / Deployment guide</label><label class="check"><input type="checkbox" value="Well-structured, maintainable and documented code">Maintainable code</label>
+   </div></div>
+  </div>
+ </section>
+</main>
+<aside class="side">
+ <section class="card">
+  <div class="card-head"><div class="preview-top"><div><h2>✦ Live Prompt Preview</h2><p>Prompt จะอัปเดตตามตัวเลือกโดยอัตโนมัติ</p></div></div><span class="status">● LIVE</span></div>
+  <div class="card-body">
+   <div class="tabs" id="promptTabs"><button class="tab active" data-tab="full">Full Prompt</button><button class="tab" data-tab="visual">Visual only</button><button class="tab" data-tab="ux">UX / Function</button></div>
+   <div style="height:12px"></div>
+   <div class="prompt" id="promptOutput" aria-live="polite"></div>
+   <div class="preview-actions"><button class="btn primary" id="copyPrompt">▣ Copy Prompt</button><button class="btn" id="downloadPrompt">↓ Download .txt</button><button class="btn" id="copyShort">Copy Short</button></div>
+   <div class="divider"></div>
+   <div class="grid2"><div><div class="mini">Estimated prompt length</div><strong id="wordCount">0 words</strong></div><div><div class="mini">Selected components</div><strong id="componentCount">0 items</strong></div></div>
+  </div>
+ </section>
+ <section class="card">
+  <div class="card-head"><div><h2>▤ Saved Design Presets</h2><p>บันทึกชุดค่าที่ใช้บ่อยไว้ใน Browser นี้</p></div><span class="badge">LOCAL</span></div>
+  <div class="card-body">
+   <div class="field"><label>Preset name</label><input class="input" id="presetName" placeholder="เช่น Corporate HR Dashboard"></div>
+   <button class="btn primary" id="savePreset" style="width:100%">＋ Save current configuration</button>
+   <div class="divider"></div>
+   <div class="saved-list" id="presetList"><div class="mini">ยังไม่มี Preset ที่บันทึกไว้</div></div>
+   <p class="mini" style="margin:12px 0 0">หมายเหตุ: Preset เก็บใน Local Storage ของ Browser และอุปกรณ์นี้เท่านั้น</p>
+  </div>
+ </section>
+ <section class="card">
+  <div class="card-head"><div><h2>Design Quality Checklist</h2><p>ตรวจสอบก่อนนำ Prompt ไปใช้งาน</p></div></div>
+  <div class="card-body">
+   <div class="checkgrid" style="grid-template-columns:1fr">
+    <label class="check"><input type="checkbox" checked> มีเป้าหมายและกลุ่มผู้ใช้ชัดเจน</label>
+    <label class="check"><input type="checkbox" checked> Layout และ Navigation เข้าใจง่าย</label>
+    <label class="check"><input type="checkbox" checked> สีและ Typography สม่ำเสมอ</label>
+    <label class="check"><input type="checkbox" checked> มีสถานะ Loading / Empty / Error</label>
+    <label class="check"><input type="checkbox" checked> รองรับ Mobile และ Keyboard</label>
+    <label class="check"><input type="checkbox"> ทดสอบทุกปุ่มและทุก User Flow</label>
+   </div>
+  </div>
+ </section>
+</aside>
+</div>
+<div class="footer">UX/UI Prompt Studio · Professional Edition · Runs locally in your browser</div>
+</div>
+<div class="toast" id="toast">Copied successfully</div>
+<script>
+const $=id=>document.getElementById(id);
+const singleKeys=['type','layout','nav','density','style','interaction','motion','responsive'];
+let activeTab='full';
+function selected(key){const el=document.querySelector(`[data-key="${key}"] .chip.active`);return el?el.textContent.trim():''}
+function selectedMulti(key){return [...document.querySelectorAll(`[data-key="${key}"] .chip.active`)].map(x=>x.textContent.trim())}
+function checked(key){return [...document.querySelectorAll(`[data-checkgroup="${key}"] input:checked`)].map(x=>x.value)}
+function val(id){return $(id).value.trim()}
+function config(){
+ const c={};singleKeys.forEach(k=>c[k]=selected(k));
+ c.effects=selectedMulti('effects');['components','interactions','ux','deliverables'].forEach(k=>c[k]=checked(k));
+ ['projectName','audience','goal','extra','font','radius','platform','framework','primaryColor','accentColor','bgColor','textColor'].forEach(k=>c[k]=val(k));
+ return c;
+}
+function makePrompt(mode='full'){
+ const c=config(),name=c.projectName||'New Digital Product';
+ const foundation=`PROJECT: ${name}\nDESIGN TYPE: ${c.type}\nTARGET USERS: ${c.audience||'Define the primary user personas based on the product context'}\nPRODUCT GOAL: ${c.goal||'Create an intuitive and effective digital experience.'}`;
+ const visual=`VISUAL DIRECTION\n- Visual style: ${c.style}\n- Layout: ${c.layout}\n- Navigation: ${c.nav}\n- Content density: ${c.density}\n- Primary / accent / background / text colors: ${c.primaryColor} / ${c.accentColor} / ${c.bgColor} / ${c.textColor}\n- Typography: ${c.font}\n- Corner radius: ${c.radius}\n- Surface effects: ${c.effects.join(', ')||'Use a restrained, consistent surface treatment'}\n- Establish a cohesive visual language, strong hierarchy, balanced whitespace, consistent spacing and clear typography.`;
+ const ux=`UX, COMPONENTS & INTERACTION\n- Components: ${c.components.join('; ')||'Choose only components required by the user journey'}\n- Interaction level: ${c.interaction}\n- Interaction patterns: ${c.interactions.join('; ')||'Use clear and predictable interactions'}\n- Motion: ${c.motion} animation; respect reduced-motion preferences.\n- UX principles: ${c.ux.join('; ')}\n- Responsive targets: ${c.responsive}\n- Ensure intuitive navigation, visible system feedback, useful validation, accessible controls and meaningful empty/loading/error states.`;
+ const build=`IMPLEMENTATION & DELIVERABLES\n- Implementation: ${c.platform}\n- UI framework: ${c.framework}\n- Deliverables: ${c.deliverables.join('; ')}\n- Build a complete, coherent experience. Do not create dead buttons or decorative controls that appear functional.\n- Use realistic sample content where backend data is unavailable. Clearly separate mock data from production integrations.\n- Keep the code maintainable, components reusable, and visual behavior consistent across screens.`;
+ const extra=c.extra?`ADDITIONAL REQUIREMENTS\n${c.extra}`:'';
+ const closing=`QUALITY BAR\nBefore finishing, review the result as a senior product designer and frontend engineer. Check layout consistency, responsive behavior, accessibility, contrast, content hierarchy, interaction states and edge cases. Prioritize clarity and usability over decoration. Deliver a polished, production-minded result.`;
+ if(mode==='visual')return `${foundation}\n\n${visual}\n\n${closing}`;
+ if(mode==='ux')return `${foundation}\n\n${ux}\n\n${build}\n\n${extra}\n\n${closing}`;
+ return `Act as a senior UX/UI designer, product designer and frontend specialist. Design and build the following digital product with professional, production-minded quality.\n\n${foundation}\n\n${visual}\n\n${ux}\n\n${build}\n\n${extra}\n\n${closing}`;
+}
+function update(){
+ const p=makePrompt(activeTab);$('promptOutput').textContent=p;
+ $('wordCount').textContent=p.trim().split(/\s+/).filter(Boolean).length+' words';
+ $('componentCount').textContent=checked('components').length+' items';
+}
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1900)}
+document.querySelectorAll('[data-key]').forEach(group=>group.addEventListener('click',e=>{
+ const b=e.target.closest('.chip');if(!b)return;
+ if(group.dataset.multi==='true')b.classList.toggle('active');
+ else{group.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active')}
+ update();
+}));
+document.querySelectorAll('input,select,textarea').forEach(el=>el.addEventListener('input',update));
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{activeTab=b.dataset.tab;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));update()}));
+function syncColor(colorId,hexId,source){const a=$(colorId),b=$(hexId);if(source==='color')b.value=a.value;else if(/^#[0-9a-fA-F]{6}$/.test(b.value))a.value=b.value;update()}
+[['primaryColor','primaryHex'],['accentColor','accentHex'],['bgColor','bgHex'],['textColor','textHex']].forEach(([a,b])=>{ $(a).addEventListener('input',()=>syncColor(a,b,'color'));$(b).addEventListener('input',()=>syncColor(a,b,'hex')) });
+$('copyPrompt').onclick=async()=>{try{await navigator.clipboard.writeText($('promptOutput').textContent);toast('คัดลอก Prompt แล้ว')}catch(e){fallbackCopy($('promptOutput').textContent)}};
+$('copyShort').onclick=async()=>{const short=`Design a ${selected('type')} for ${val('projectName')||'a digital product'} using ${selected('style')} style, ${selected('layout')} layout, ${selected('nav')} navigation. Use ${selected('responsive')} responsive design. Prioritize usability, accessibility, visual hierarchy and functional interactions.`;try{await navigator.clipboard.writeText(short);toast('คัดลอก Short Prompt แล้ว')}catch(e){fallbackCopy(short)}};
+function fallbackCopy(t){const x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();document.execCommand('copy');x.remove();toast('คัดลอกแล้ว')};
+$('downloadPrompt').onclick=()=>{const blob=new Blob([$('promptOutput').textContent],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(val('projectName')||'ux-ui-prompt').toLowerCase().replace(/[^a-z0-9ก-๙]+/gi,'-')+'.txt';a.click();URL.revokeObjectURL(a.href);toast('ดาวน์โหลด Prompt แล้ว')};
+function savePreset(){const name=val('presetName')||val('projectName')||'Untitled preset';const list=JSON.parse(localStorage.getItem('uxui-presets')||'[]');list.unshift({name,data:config(),date:new Date().toLocaleDateString('th-TH')});localStorage.setItem('uxui-presets',JSON.stringify(list.slice(0,20)));renderPresets();toast('บันทึก Preset แล้ว')}
+$('savePreset').onclick=savePreset;$('savePresetTop').onclick=()=>{savePreset();$('presetName').focus()};
+function applyConfig(c){
+ singleKeys.forEach(k=>{document.querySelectorAll(`[data-key="${k}"] .chip`).forEach(b=>b.classList.toggle('active',b.textContent.trim()===c[k]))});
+ ['effects'].forEach(k=>document.querySelectorAll(`[data-key="${k}"] .chip`).forEach(b=>b.classList.toggle('active',(c[k]||[]).includes(b.textContent.trim()))));
+ ['components','interactions','ux','deliverables'].forEach(k=>document.querySelectorAll(`[data-checkgroup="${k}"] input`).forEach(x=>x.checked=(c[k]||[]).includes(x.value)));
+ Object.keys(c).forEach(k=>{if($(k))$(k).value=c[k]});
+ [['primaryColor','primaryHex'],['accentColor','accentHex'],['bgColor','bgHex'],['textColor','textHex']].forEach(([a,b])=>$(b).value=$(a).value);
+ update();
+}
+function renderPresets(){const list=JSON.parse(localStorage.getItem('uxui-presets')||'[]');$('presetList').innerHTML='';if(!list.length){$('presetList').innerHTML='<div class="mini">ยังไม่มี Preset ที่บันทึกไว้</div>';return}
+ list.forEach((p,i)=>{const row=document.createElement('div');row.className='saved-item';const info=document.createElement('div');const strong=document.createElement('strong');strong.textContent=p.name;const small=document.createElement('small');small.textContent='Saved '+p.date;info.append(strong,small);const actions=document.createElement('div');const load=document.createElement('button');load.textContent='Load';load.onclick=()=>{applyConfig(p.data);toast('โหลด Preset แล้ว')};const del=document.createElement('button');del.textContent='Delete';del.style.color='#b91c1c';del.onclick=()=>{const now=JSON.parse(localStorage.getItem('uxui-presets')||'[]');now.splice(i,1);localStorage.setItem('uxui-presets',JSON.stringify(now));renderPresets()};actions.append(load,del);row.append(info,actions);$('presetList').append(row)})}
+}
+$('resetBtn').onclick=()=>{if(!confirm('ต้องการรีเซ็ตตัวเลือกทั้งหมดหรือไม่?'))return;location.reload()};
+renderPresets();update();
+</script>
+</body>
+</html>
